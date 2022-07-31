@@ -26,6 +26,7 @@ import { Warning, Checks } from 'phosphor-react'
 import { LessonType, SlideType } from 'entities/lesson'
 import ProgressSteps from 'components/ProgressSteps'
 import Card from 'components/Card'
+import MintKudos from 'components/MintKudos'
 import QuestComponent from 'components/Quest/QuestComponent'
 import { useActiveWeb3React } from 'hooks'
 import { track, verifySignature, getSignature } from 'utils'
@@ -625,6 +626,7 @@ const Lesson = ({ lesson }: { lesson: LessonType }): React.ReactElement => {
                     />
                   )}
                   <h2>{`Congrats on finishing our "${lesson.name}" lesson! 🥳`}</h2>
+                  <MintKudos />
                   <p>{lesson.endOfLessonText && lesson.endOfLessonText}</p>
                   <NextLink href={`/lessons`}>
                     <Button
